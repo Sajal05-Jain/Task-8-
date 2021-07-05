@@ -1,0 +1,75 @@
+<script>
+function lw()
+{
+var i = document.getElementById("in1").value
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "http://192.168.0.104/cgi-bin/task8.py?x=" + i, true);
+xhr.send();
+xhr.onload= function() {
+var i = document.getElementById("in1").value
+var output = xhr.responseText;
+document.getElementById("d1").innerHTML = output;
+}
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>License Plate-QUERY</title>
+</head>
+<style>
+    body {
+        
+        background-image:url("https://i.gifer.com/origin/7e/7e24b4ba9b2067352b42d43fc4e7d7aa.gif") ;
+      	opacity: 150%;
+	text-align: center;
+        }
+d7 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: black;
+        display: inline-block;
+        font-size: 26px;
+        margin: 2px 2px;
+        cursor: pointer;
+        position: absolute;
+        top: 245px;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+
+    }
+
+    .d7:hover {
+        background-color: #3e8e41
+    }
+
+    .d7:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+
+
+<body>
+<h1 style="background-color:lightpink;">License/Number Plate Query</h1>
+    <div class="d3"><i><b> Enter License/Number Plate <input id="in1" /></b></i></div>
+<br/>    
+<button class="d7" onclick="lw()">
+
+        <b>Get Detail</b>
+    </button> 
+    <pre>
+<br/>
+    <div id="d1">Press <b>Get Detail</b> to see your output Below...<div />
+
+</body>
